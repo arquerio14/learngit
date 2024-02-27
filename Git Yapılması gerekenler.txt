@@ -1,0 +1,9 @@
+                         CONFLİCT'LERİ AZALTMAK İÇİN YAPMAN GEREKEN ADIMLAR:
+
+1- git stash kullan.
+2- git checkout master ile master branchine geç
+3- git pull ile remota'dan güncel kodları çek
+4- git checkout ile stash yaptığın branche geç
+5- git merge master ile güncel kodları kendi branchine eşle
+6- git stash pop ile stash içine aldığın değişiklikleri çıkar
+7- git add/commit/push ile remote'a kodlarını gönder

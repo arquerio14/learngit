@@ -14,10 +14,13 @@ public class Main {
         System.out.println("Eklendi.");
     }
     public static void sil(){
-        System.out.println("Eklendi.");
+        System.out.println("Silindi.");
     }
-    public static void güncelle(){
-        System.out.println("Eklendi.");
+    public static void menuGoster(){
+        System.out.println("İki sayının toplamını bul");
+        System.out.println("İki sayının farkını bul");
+        System.out.println("İki sayının çarpmını bul");
+        System.out.println("İki sayının bölümünü bul");
     }
     public static int topla(int sayi1,int sayi2){
         return sayi1+sayi2;

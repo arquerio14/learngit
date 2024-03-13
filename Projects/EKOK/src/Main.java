@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -12,6 +10,7 @@ public class Main {
         System.out.print("Küçük sayıyı gir : ");
         number1 = input.nextInt();
 
+        carpim = number*number1;
 
         while (true){
             kalan = number%number1;
@@ -22,5 +21,7 @@ public class Main {
             number1 = kalan;
         }
         System.out.println("Sayıların EBOB'u : "+number1);
+        ekok = carpim/number1;
+        System.out.println(ekok);
     }
 }

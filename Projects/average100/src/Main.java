@@ -10,5 +10,12 @@ public class Main {
         }
         ortalama = toplam / sayilar.length;
         System.out.println("\n"+ortalama);
+        System.out.println("Ortalama altında olan sayılar : ");
+
+        for (int sayi:sayilar){
+            if (sayi<ortalama){
+                System.out.print(sayi+",");
+            }
+        }
     }
 }

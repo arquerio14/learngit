@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="rasyonelSayi:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/rasyonelSayi_jar</output-path>
+    <root id="archive" name="rasyonelSayi.jar">
+      <element id="module-output" name="rasyonelSayi" />
+    </root>
+  </artifact>
+</component>

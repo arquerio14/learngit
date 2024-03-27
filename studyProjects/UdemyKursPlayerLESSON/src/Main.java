@@ -49,6 +49,7 @@ public class Main {
     public static void listeyiOynat(LinkedList<Ders> izlenecekDersler){
         Scanner input = new Scanner(System.in);
         boolean cikis = false;
+        boolean ileriDogruHareket = true;
 
         ListIterator<Ders> iterator = izlenecekDersler.listIterator();
         if (izlenecekDersler.size() == 0){
@@ -68,6 +69,43 @@ public class Main {
                     System.out.println("Uygulamadan çıkılıyor...");
                     cikis = true;
                     break;
+                case 1:
+                    if (!ileriDogruHareket){
+                        ileriDogruHareket = true;
+                        if (iterator.hasNext()){
+                            iterator.next();
+                        }
+                    }
+                    if (iterator.hasNext()){
+                        Ders ilkders = iterator.next();
+                        System.out.println("============================================================================");
+                        System.out.println("ŞUANKİ DERS : Ders no: "+ilkders.getDersNo()+" Başlık: "+ilkders.getDersBaslik()+" Süre: "+ilkders.getDakika());
+                        System.out.println("============================================================================");
+                    }else {
+                        System.out.println("SON DERSE GELDİNİZ.");
+                    }
+                    break;
+                case 2:
+                    if (ileriDogruHareket){
+                        ileriDogruHareket = false;
+                        if (iterator.hasPrevious()){
+                            iterator.previous();
+                        }
+                    }
+                    if (iterator.hasPrevious()){
+                        Ders ilkders = iterator.previous();
+                        System.out.println("============================================================================");
+                        System.out.println("ŞUANKİ DERS : Ders no: "+ilkders.getDersNo()+" Başlık: "+ilkders.getDersBaslik()+" Süre: "+ilkders.getDakika());
+                        System.out.println("============================================================================");
+                    }else {
+                        System.out.println("İLK DERSE GELDİNİZ.");
+                    }
+                    break;
+                case 3:
+                    System.out.println("============================================================================");
+                    izlenecekDersleriListele(izlenecekDersler);
+                    System.out.println("============================================================================");
+                    break;
                 case 9:
                     menuGoster();
                     break;
@@ -75,9 +113,24 @@ public class Main {
         }
     }
 
+    private static void izlenecekDersleriListele(LinkedList<Ders> izlenecekDersler) {
+        ListIterator<Ders> iterator = izlenecekDersler.listIterator();
+        if (izlenecekDersler.size() == 0){
+            System.out.println("Henüz bir ders eklenmemiş.");
+        }else {
+            while (iterator.hasNext()){
+                Ders ilkders = iterator.next();
+                System.out.println("Ders no: "+ilkders.getDersNo()+" Başlık: "+ilkders.getDersBaslik()+" Süre: "+ilkders.getDakika());
+            }
+        }
+    }
+
     private static void menuGoster() {
         System.out.println("---------- MENU ----------");
         System.out.println("0 - Çıkış");
+        System.out.println("1 - Bir sonraki derse geç");
+        System.out.println("2 - Bir önceki derse geç");
+        System.out.println("3 - Tüm listeyi göster");
         System.out.println("9 - Menü");
     }
 }

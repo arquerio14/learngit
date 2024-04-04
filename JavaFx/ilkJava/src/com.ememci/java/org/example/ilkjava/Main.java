@@ -1,14 +1,23 @@
 package org.example.ilkjava;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    public static void main(String[] args) {}
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void init() throws Exception {
@@ -22,12 +31,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Sample.fxml"));
-        VBox rootNode = loader.load();
 
-        Scene scene = new Scene(rootNode,500,500);
+        Parent root = FXMLLoader.load(getClass().getResource("Sample.fxml"));
+        Scene scene = new Scene(root,600,400);
         stage.setScene(scene);
-        stage.setTitle("Merhava Java Fx");
         stage.show();
     }
 }
